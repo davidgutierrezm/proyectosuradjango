@@ -17,9 +17,10 @@ from turtle import home
 from django.contrib import admin
 from django.urls import path
 
-from web.views import Home 
+from web.views import Home,Medicos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Home),
+    path('', Home, name = "home"),
+    path('medicos/', Medicos, name = "medicos")
 ]
