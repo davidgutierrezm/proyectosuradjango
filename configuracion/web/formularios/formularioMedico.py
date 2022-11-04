@@ -19,11 +19,43 @@ class formularioMedico(forms.Form):
         (3, 'Los Molinos')
     )
 
-    nombre = forms.CharField()
-    apellidos = forms.CharField()
-    cedula = forms.CharField()
-    tarjetaProfesional = forms.CharField()
-    especialidad = forms.ChoiceField()
-    jornada = forms.ChoiceField ()
-    contacto = forms.CharField()
-    sede = forms.ChoiceField ()
+    nombre = forms.CharField(
+        widget = forms.TextInput(attrs={"class":"form-control mb-3"}),
+        required = True,
+        max_length = 15
+    )
+    apellidos = forms.CharField(
+        widget = forms.TextInput(attrs={"class":"form-control mb-3"}),
+        required = True,
+        max_length = 35
+    )
+    cedula = forms.CharField(
+        widget = forms.TextInput(attrs={"class":"form-control mb-3"}),
+        required = True,
+        max_length = 10
+    )
+    tarjeta_Profesional = forms.CharField(
+        widget = forms.TextInput(attrs={"class":"form-control mb-3"}),
+        required = True,
+        max_length = 20
+    )
+    especialidad = forms.ChoiceField(
+        widget = forms.Select(attrs={"class":"form-select mb-3"}),
+        required = True,
+        choices = ESPECIALIDADES
+    )
+    jornada = forms.ChoiceField (
+        widget = forms.Select(attrs={"class":"form-select mb-3"}),
+        required = True,
+        choices = JORNADAS
+    )
+    contacto = forms.CharField(
+        widget = forms.NumberInput(attrs={"class":"form-control mb-3"}),
+        required = True,
+        max_length = 20
+    )
+    sede = forms.ChoiceField (
+         widget = forms.Select(attrs={"class":"form-select mb-3"}),
+        required = True,
+        choices = SEDES
+    )
