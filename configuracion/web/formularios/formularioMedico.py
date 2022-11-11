@@ -55,7 +55,7 @@ class formularioMedico(forms.Form):
         max_length = 20
     )
     sede = forms.ChoiceField (
-         widget = forms.Select(attrs={"class":"form-select mb-3"}),
+        widget = forms.Select(attrs={"class":"form-select mb-3"}),
         required = True,
         choices = SEDES
     )
