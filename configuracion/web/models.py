@@ -135,3 +135,18 @@ class Medicos(models.Model):
     class Meta:
         managed = False
         db_table = 'medicos'
+
+
+class Pacientes(models.Model):
+    nombres = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=50)
+    cedula = models.CharField(max_length=50)
+    tipo = models.IntegerField()
+    regimen = models.IntegerField()
+    grupo = models.IntegerField()
+    celular = models.CharField(max_length=50)
+    correo = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'pacientes'

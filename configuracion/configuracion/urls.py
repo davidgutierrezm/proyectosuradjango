@@ -17,11 +17,11 @@ from turtle import home
 from django.contrib import admin
 from django.urls import path
 
-from web.views import Home,Medicos,Pacientes
+from web.views import Home,MedicosVista,PacientesVista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home, name = "home"),
-    path('medicos/', Medicos, name = "medicos"),
-    path('pacientes/', Pacientes, name = "pacientes")
+    path('medicos/', MedicosVista, name = "medicos"),
+    path('pacientes/', PacientesVista, name = "pacientes")
 ]

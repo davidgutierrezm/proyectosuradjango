@@ -3,12 +3,12 @@ class formularioPacientes(forms.Form):
 
     TIPOAFILIADO = (
         (1,'Cotizante'),
-        (2,'Beneficiario'),
+        (2,'Beneficiario')
         
     )
     REGIMEN = (
         (1,'Contributivo'),
-        (2, 'Subsidiado'),
+        (2, 'Subsidiado')
 
     )
     GRUPOINGRESO = (
@@ -33,7 +33,7 @@ class formularioPacientes(forms.Form):
         required = True,
         max_length = 10
     )
-    tipo_afiliado = forms.CharField(
+    tipo_afiliado = forms.ChoiceField(
         widget = forms.Select(attrs={"class":"form-select mb-3"}),
         required = True,
         choices = TIPOAFILIADO
@@ -48,4 +48,13 @@ class formularioPacientes(forms.Form):
         required = True,
         choices = GRUPOINGRESO
     )
-  
+    celular = forms.CharField(
+        widget = forms.TextInput(attrs={"class":"form-control mb-3"}),
+        required = True,
+        max_length = 15
+    )
+    correo = forms.CharField(
+        widget = forms.TextInput(attrs={"class":"form-control mb-3"}),
+        required = True,
+        max_length = 15
+    )

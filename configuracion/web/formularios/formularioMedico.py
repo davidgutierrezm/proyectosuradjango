@@ -34,7 +34,7 @@ class formularioMedico(forms.Form):
         required = True,
         max_length = 10
     )
-    tarjeta_Profesional = forms.CharField(
+    tarjetaProfesional = forms.CharField(
         widget = forms.TextInput(attrs={"class":"form-control mb-3"}),
         required = True,
         max_length = 20
